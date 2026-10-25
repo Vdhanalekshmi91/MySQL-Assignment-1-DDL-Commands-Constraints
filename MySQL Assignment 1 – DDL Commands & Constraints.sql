@@ -8,7 +8,7 @@ Use EMPLOYEE;
 create table Departments(department_id int,department_name varchar(100));
 create table Location(location_id int,location varchar(30));
 create table Employees(employee_id int,employee_name varchar(50),gender enum('M','F'),age int,hire_date date,designation varchar(100),
-department_id int,location_id int,salary decimal(10.2));
+department_id int,location_id int,salary decimal(10,2));
 
 -- ALTER 
 Alter table Employees Add email varchar(254);
@@ -46,7 +46,7 @@ hire_date date default(current_date),
 designation varchar(100),
 department_id int,
 location_id int,
-salary decimal(10.2),
+salary decimal(10,2),
 Foreign Key(department_id)References Departments(department_id),
 Foreign Key(location_id)References Location(location_id));
 
